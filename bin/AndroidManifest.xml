@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.karun.callsmsblocker"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="1"
+        android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    
+    
+   <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.karun.callsmsblocker.Cursoradapterviewsms"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.karun.callsmsblocker.CURSORADAPTERVIEWSMS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.karun.callsmsblocker.Cursoradapterviewcall"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.karun.callsmsblocker.CURSORADAPTERVIEWCALL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver 
+            android:name="com.karun.callsmsblocker.Smsblocker"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter
+                android:priority="1000"
+                >
+               <action
+                   android:name="android.provider.Telephony.SMS_RECEIVED"/>
+               </intent-filter>
+        </receiver>
+         <receiver 
+            android:name="com.karun.callsmsblocker.Callreceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter
+                android:priority="2000"
+                >
+               <action
+                   android:name="android.intent.action.PHONE_STATE"/>
+               </intent-filter>
+        </receiver>
+   
+    </application>
+
+</manifest>

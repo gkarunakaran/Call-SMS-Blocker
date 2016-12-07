@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FF981256"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/tnumber"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="50dp"
+        android:hint="Enter Mobile number(With country code)"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/taddnumber"
+        style="@style/btnStyleOrange"
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Add Number" />
+
+    <Button
+        android:id="@+id/tview"
+        android:layout_width="214dp"
+        style="@style/btnStylegreen"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="View Numbers" />
+
+</LinearLayout>
